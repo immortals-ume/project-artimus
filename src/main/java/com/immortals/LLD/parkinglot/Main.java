@@ -74,8 +74,6 @@ public final class Main {
         System.out.println("\n--- 6. concurrency: 200 threads, 50 spots ---");
         runConcurrencyCheck();
     }
-
-    /** Proves the CAS design: exactly capacity succeed, and no spot is assigned twice. */
     static void runConcurrencyCheck() throws Exception {
         int capacity = 50, threads = 200;
 
