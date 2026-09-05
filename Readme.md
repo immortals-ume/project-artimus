@@ -1,6 +1,10 @@
 # Project Artimus
 
-Project Artimus is a Java-based application implementing core features for the Immortals UME platform. This repository contains source code, low-level design docs, and build configuration for development and CI.
+Project Artimus is a Java-based application implementing core features for the Immortals UME platform. This repository contains source code, low-level design docs, build configuration for development and CI, and a curated set of learning problems.
+
+Mission
+
+This project purposefully constructs problems and exercises covering foundational first-year college topics and progressively harder interview-style challenges aimed at preparing learners to apply for FAANG-level roles. Problems include algorithmic practice, system design mini-tasks, low-level design exercises, and real-world engineering scenarios.
 
 Quickstart
 
