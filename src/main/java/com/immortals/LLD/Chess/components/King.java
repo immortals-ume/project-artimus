@@ -10,9 +10,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class King extends Piece {
-    private static final int[][] OFFSETS = {{-1,-1},{-1,0},{-1,1},{0,-1},{0,1},{1,-1},{1,0},{1,1}};
-    public King(Color color) { super(color); }
- 
+    private static final int[][] OFFSETS = {{-1, -1}, {-1, 0}, {-1, 1}, {0, -1}, {0, 1}, {1, -1}, {1, 0}, {1, 1}};
+
+    public King(Color color) {
+        super(color);
+    }
+
     @Override
     public List<Positions> getAttackSquares(Positions from, Board board) {
         List<Positions> squares = new ArrayList<>();
@@ -22,7 +25,10 @@ public class King extends Piece {
         }
         return squares;
     }
-    @Override public List<Positions> getPseudoLegalMoves(Positions from, Board board) {
+
+
+    @Override
+    public List<Positions> getPseudoLegalMoves(Positions from, Board board) {
         List<Positions> moves = new ArrayList<>();
         for (Positions p : getAttackSquares(from, board)) {
             Piece occ = board.getPiece(p);
@@ -30,6 +36,16 @@ public class King extends Piece {
         }
         return moves; // castling is appended by Game — it needs "no square in the path is attacked"
     }
-    @Override public char getSymbol() { return 'K'; }
-    @Override public Piece copy() { King k = new King(color); k.hasMoved = hasMoved; return k; }
+
+    @Override
+    public char getSymbol() {
+        return 'K';
+    }
+
+    @Override
+    public Piece copy() {
+        King k = new King(color);
+        k.hasMoved = hasMoved;
+        return k;
+    }
 }

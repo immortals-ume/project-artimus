@@ -9,8 +9,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Pawn extends Piece {
-    public Pawn(Color color) { super(color); }
- 
+    public Pawn(Color color) {
+        super(color);
+    }
+
     @Override
     public List<Positions> getAttackSquares(Positions from, Board board) {
         int dir = (color == Color.WHITE) ? 1 : -1;
@@ -21,12 +23,13 @@ public class Pawn extends Piece {
         }
         return squares;
     }
+
     @Override
     public List<Positions> getPseudoLegalMoves(Positions from, Board board) {
         List<Positions> moves = new ArrayList<>();
         int dir = (color == Color.WHITE) ? 1 : -1;
         int startRow = (color == Color.WHITE) ? 1 : 6;
- 
+
         Positions oneStep = new Positions(from.row + dir, from.col);
         if (oneStep.isValid() && board.getPiece(oneStep) == null) {
             moves.add(oneStep);
@@ -41,8 +44,17 @@ public class Pawn extends Piece {
         }
         return moves;
     }
+
+
     @Override
-    public char getSymbol() { return 'P'; }
+    public char getSymbol() {
+        return 'P';
+    }
+
     @Override
-    public Piece copy() { Pawn p = new Pawn(color); p.hasMoved = hasMoved; return p; }
+    public Piece copy() {
+        Pawn p = new Pawn(color);
+        p.hasMoved = hasMoved;
+        return p;
+    }
 }
