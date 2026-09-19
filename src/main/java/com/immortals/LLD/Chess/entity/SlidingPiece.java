@@ -33,6 +33,7 @@ public abstract class SlidingPiece extends Piece {
  
     @Override
     public List<Positions> getPseudoLegalMoves(Positions from, Board board) { return slide(from, board, false); }
+
     @Override
     public List<Positions> getAttackSquares(Positions from, Board board) { return slide(from, board, true); }
 }
