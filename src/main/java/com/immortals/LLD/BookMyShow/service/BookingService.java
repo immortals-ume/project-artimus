@@ -48,7 +48,6 @@ public class BookingService {
             return existing;
         }
         Object lock = showLocks.computeIfAbsent(showId, ignored -> new Object());
-
         synchronized (lock) {
             existing = bookingRepository.findByIdempotencyKey(idempotencyKey);
             if (existing != null) {
