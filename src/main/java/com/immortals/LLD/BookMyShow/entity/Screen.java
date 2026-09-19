@@ -14,6 +14,14 @@ public class Screen {
         this.seats = seats;
     }
 
+    public long getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
     public List<Seat> getSeats() {
         return seats;
     }

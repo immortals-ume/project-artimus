@@ -21,12 +21,14 @@ public class BookMyShowMain {
         System.out.println("\n===== BOOKMYSHOW LLD =====\n");
 
         Seat seatA1 = new Seat(1, "A", 1, SeatType.PREMIUM);
-
         Seat seatA2 = new Seat(2, "A", 2, SeatType.PREMIUM);
+
+        Theater theater = new Theater(1, "PVR Cinemas", "Bengaluru");
         Screen screen = new Screen(1, "Screen 1", List.of(seatA1, seatA2));
+        theater.addScreen(screen);
 
         Movie movie = new Movie(1, "Example Movie", 150);
-        Show show = new Show(1, movie, screen, Instant.now());
+        Show show = new Show(1, movie, screen, theater, Instant.now());
         InMemoryShowSeatRepository showSeatRepository = new InMemoryShowSeatRepository();
 
         showSeatRepository.save(new ShowSeat(show.getId(), seatA1.getId()));
